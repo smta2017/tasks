@@ -33,7 +33,7 @@ class TaskFactory extends Factory
             'title' => $this->faker->text($this->faker->numberBetween(5, 20)),
             'description' => $this->faker->text($this->faker->numberBetween(550, 650)),
             'created_by' =>  User::whereIsAdmin(1)->pluck('id')->random(),
-            'assigned_to' =>  User::pluck('id')->random()
+            'assigned_to' =>  $this->faker->numberBetween(1, 10)
         ];
     }
 }
